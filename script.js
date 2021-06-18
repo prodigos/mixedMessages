@@ -46,9 +46,19 @@ let message = [];
 
 const summit = (arr) => {
     for (i = 0; i < arr.length; i++){
-        message.push(arr[randomNumber(arr.length)])
+        if(arr === heroes){
+            message.push(`We need ${arr[randomNumber(arr.length)]} to help us.`)
+
+        } else if (arr === villains) {
+            message.push(`${arr[randomNumber(arr.length)]} is on the loose,`)
+        } else if (arr === places) {
+            message.push(`and the villain is terrorising ${arr[randomNumber(arr.length)]}`)
+        } else {
+            return "we are doomed"
+        }
         return message
     }
+    
 }
 
 
@@ -56,4 +66,4 @@ const summit = (arr) => {
 summit(heroes)
 summit(villains)
 summit(places)
-console.log(message)
+console.log(message.join(' '))
