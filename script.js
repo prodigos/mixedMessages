@@ -1,3 +1,4 @@
+const { SlowBuffer } = require("buffer");
 
 const randomNumber = (num) => {
     return Math.floor(Math.random() * num)
@@ -45,11 +46,14 @@ let message = [];
 
 const summit = (arr) => {
     for (i = 0; i < arr.length; i++){
-        let random = randomNumber(arr.length);
-        message.push(arr[random])
+        message.push(arr[randomNumber(arr.length)])
+        return message
     }
-    return message
 }
 
 
-console.log(summit(heroes))
+// console.log(summit(heroes))
+summit(heroes)
+summit(villains)
+summit(places)
+console.log(message)
